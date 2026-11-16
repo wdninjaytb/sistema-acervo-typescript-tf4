@@ -9,9 +9,7 @@ import { RepositorioMemoria } from "./repositories/RepositorioMemoria";
 const terminal = createInterface({ input: entrada, output: saida });
 const acervo = new RepositorioMemoria<ItemAcervo>();
 
-// Utility Type: resumo somente de leitura com parte das informações de um item.
 type ResumoItem = Readonly<Pick<ItemAcervo, "id" | "titulo" | "tipo" | "statusDisponibilidade">>;
-// Utility Type: alteração parcial, limitada ao título.
 type EdicaoItem = Partial<Pick<ItemAcervo, "titulo">>;
 
 function obterObrigatorio(item: ItemAcervo | undefined): ItemAcervo {
